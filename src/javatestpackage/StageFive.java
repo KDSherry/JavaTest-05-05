@@ -9,15 +9,15 @@ public class StageFive {
 	static ArrayList<Person> people = new ArrayList<Person>();
 	static ArrayList<Marina> Marina = new ArrayList<Marina>();
 	
+	
 	public static void main(String[] args) {
 		
 
 		String s = fileReader("stage_5_input.txt");
-		System.out.println(s);
+		//System.out.println(s);
 		stringParser(s);
-		for(int i =0; i< Marina.size(); i++){
-			System.out.println(Marina.get(i).getLocation());
-		}
+		
+		
 	}
 	
 	public static String fileReader(String filePath){
@@ -55,9 +55,9 @@ public class StageFive {
 			//String[][] spaces = new String[7][7];
 
 			String[] firstSplit = completeFile.split(delim1);
-			for(int i = 0; i<firstSplit.length; i++){
-				System.out.println(firstSplit[i]);
-			}
+			/*for(int i = 0; i<firstSplit.length; i++){
+			System.out.println(firstSplit[i]);
+			}*/
 			
 			//split the marinas 
 			String[] marinas = firstSplit[1].split(delim2);
@@ -76,15 +76,15 @@ public class StageFive {
 			//split the people
 			String [] persons = firstSplit[5].split(delim2);
 			for(int i = 0; i<persons.length-1; i++){
-				System.out.println(persons[i]);
+				//System.out.println(persons[i]);
 				String[]details = persons[i].split(delim3);
-				System.out.println(details[1]);
+				//System.out.println(details[1]);
 				if (details[1].equals("Adele")){
-					people.add(new Person(details[1],"Adele",details[2],details[3]));
+					people.add(new Person(details[1],"Ginger",details[2],details[3]));
 				}
 				else if (details.length>4){
 					String[]names = details[1].split(delim4);
-					System.out.println(names[1]);
+					//System.out.println(names[1]);
 					people.add(new Person(names[0],names[1],details[2],details[3],details[4]));
 				}
 				else{
