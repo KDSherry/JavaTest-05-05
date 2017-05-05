@@ -6,7 +6,7 @@ public class Boat implements Vehicle{
 	//Attributes
 	private String name;
 	private String countryOfOrigin;
-	private int size;
+	private float size;
 	private int mastHeight;
 	private boolean needsRepairs = false;
 	private String currentLocation;
@@ -19,10 +19,10 @@ public class Boat implements Vehicle{
 	private int speed = 0;
 	
 	//constructor
-	public Boat(String name, String countryOfOrigin, int size){
+	public Boat(String name, String countryOfOrigin, float f){
 		this.name = name;
 		this.countryOfOrigin = countryOfOrigin;
-		this.size = size;
+		this.size = f;
 	}
 	
 	public void newCrew(String firstName, String surname, String DOB, String nationality){
@@ -78,7 +78,7 @@ public class Boat implements Vehicle{
 		this.size = size;
 	}
 
-	public int getSize() {
+	public float getSize() {
 		
 		return size;
 	}
