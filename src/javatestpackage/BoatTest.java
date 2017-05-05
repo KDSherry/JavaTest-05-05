@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class BoatTest {
-	Boat testBoat = new Boat("",  "",  "medium");
+	Boat testBoat = new Boat("",  "",  1);
 	
 	@Test
 	public void setNameTest() {
@@ -21,7 +21,7 @@ public class BoatTest {
 	
 	@Test
 	public void setSize(){
-		testBoat.setSize("medium");
-		assertEquals("medium", testBoat.getSize());
+		testBoat.setSize(2);
+		assertEquals(2, testBoat.getSize());
 	}
 }

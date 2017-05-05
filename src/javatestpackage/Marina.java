@@ -1,17 +1,27 @@
 package javatestpackage;
 
+import java.util.ArrayList;
+
 public class Marina {
 	//Attributes
 	private String location;
 	private int sBoatCap;
 	private int mBoatCap;
 	private int lBoatCap;
+	private int moorSize;
+	
+	ArrayList <Boat> dockedBoats = new ArrayList<Boat>();
 	
 	//other requirements
 	private int maxMastHeight;
 	private boolean hasRepairs;
 	
 	//Constructor
+	public Marina(String location, int moorSize){
+		this.location = location;
+		this.setMoorSize(moorSize);
+	}
+	
 	public Marina(String location, int sBoats, int mBoats, int lBoats){
 		this.location = location;
 		this.sBoatCap = sBoats;
@@ -28,12 +38,25 @@ public class Marina {
 		this.hasRepairs = hasRepairs;
 	}
 
+	public void moorNewBoat(Boat b){
+		if (b.getCurrentLocation() != null){
+			System.out.print("Boat is already moored elsewhere.");
+			return;
+		}
+		if (moorSize-(b).getSize()>0 &&(b.hasPeople()== true)){
+			dockedBoats.add(b);
+			b.setCurrentLocation(location);
+		}
+	}
+	
+	
+	
 	public void setLocation(String string) {
 		
 		this.location = string;
 	}
 
-	public Object getLocation() {
+	public String getLocation() {
 		// TODO Auto-generated method stub
 		return location;
 	}
@@ -86,6 +109,14 @@ public class Marina {
 	public Object getHasRepairs() {
 		// TODO Auto-generated method stub
 		return hasRepairs;
+	}
+
+	public int getMoorSize() {
+		return moorSize;
+	}
+
+	public void setMoorSize(int moorSize) {
+		this.moorSize = moorSize;
 	}
 	
 }

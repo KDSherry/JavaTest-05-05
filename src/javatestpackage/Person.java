@@ -22,7 +22,7 @@ public class Person {
 		this.nationality = nationality;
 		this.visaInfo = visaInfo;
 	}
-	
+		
 	//getters and setters
 	public String getFName(){
 		return firstName;
